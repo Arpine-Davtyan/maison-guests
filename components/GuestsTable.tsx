@@ -37,7 +37,7 @@ export default async function GuestsTable({
         <div className="space-y-4">
             <div className="flex items-center justify-between">
                 <p className="text-sm text-wenge">
-                    Ընդանհուր՝{" "}
+                    Ընդհանուր՝{" "}
                     <span className="font-medium text-ink">
                         {total}
                     </span>{" "}
@@ -53,10 +53,10 @@ export default async function GuestsTable({
                                 Անուն
                             </TableHead>
 
-                            <TableHead className="h-10 px-2 text-right text-xs font-medium uppercase tracking-wider text-wenge">
+                            <TableHead className="h-10 px-2 text-xs font-medium uppercase tracking-wider text-wenge"></TableHead>
+                            <TableHead className="h-10 px-2 pr-5 text-right text-xs font-medium uppercase tracking-wider text-wenge">
                                 Հյուրեր
                             </TableHead>
-                            <TableHead className="h-10 px-2 pr-5 text-xs font-medium uppercase tracking-wider text-wenge"></TableHead>
                         </TableRow>
                     </TableHeader>
 
@@ -80,24 +80,30 @@ export default async function GuestsTable({
                                         {guest.full_name}
                                     </TableCell>
 
-                                    <TableCell className="p-2 text-right text-wenge">
+                                    <TableCell className="flex py-2">
+                                        {guest.accepted ? (
+                                            <span className="inline-flex items-center gap-2 text-sm text-green-700">
+                                                <CheckIcon className="size-5" />
+
+                                                <span className="hidden sm:inline">
+                                                    Հաստատված է
+                                                </span>
+                                            </span>
+                                        ) : (
+                                            <span className="inline-flex items-center gap-2 text-sm text-red-600">
+                                                <XIcon className="size-5" />
+
+                                                <span className="hidden sm:inline">
+                                                    Չի մասնակցում
+                                                </span>
+                                            </span>
+                                        )}
+                                    </TableCell>
+
+                                    <TableCell className="p-2 pr-5 text-right text-wenge">
                                         {guest.accepted
                                             ? guest.number ?? 0
                                             : 0}
-                                    </TableCell>
-
-                                    <TableCell className="flex py-2 pr-5 justify-end">
-                                        {guest.accepted ? (
-                                            <CheckIcon
-                                                size={24}
-                                                className="text-green-600"
-                                            />
-                                        ) : (
-                                            <XIcon
-                                                size={24}
-                                                className="text-red-500"
-                                            />
-                                        )}
                                     </TableCell>
                                 </TableRow>
                             ))
