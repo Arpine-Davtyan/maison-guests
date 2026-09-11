@@ -17,7 +17,17 @@ export default async function OrderPage({
 
     return (
         <section className="section container">
-            <h2>{order.invitationNames}</h2>
+            <div className="mb-8 text-center">
+                <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold">
+                    Maison Invite
+                </p>
+
+                <h1>{order.invitationNames}</h1>
+
+                <p className="mt-3 text-sm text-wenge">
+                    Ձեր հրավերի հյուրերի ցանկը
+                </p>
+            </div>
 
             <GuestsTable
                 orderId={id}

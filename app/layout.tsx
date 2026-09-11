@@ -26,11 +26,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${cormorantGaramond.variable} ${jost.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1 bg-ivory">
+
+        <main className="flex flex-1 flex-col">
           {children}
         </main>
+
         <Footer />
       </body>
     </html>

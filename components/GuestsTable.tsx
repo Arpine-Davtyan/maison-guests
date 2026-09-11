@@ -89,12 +89,12 @@ export default async function GuestsTable({
                                     <TableCell className="flex py-2 pr-5 justify-end">
                                         {guest.accepted ? (
                                             <CheckIcon
-                                                size={20}
+                                                size={24}
                                                 className="text-green-600"
                                             />
                                         ) : (
                                             <XIcon
-                                                size={20}
+                                                size={24}
                                                 className="text-red-500"
                                             />
                                         )}
