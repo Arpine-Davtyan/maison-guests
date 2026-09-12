@@ -16,7 +16,7 @@ export default async function OrderPage({
     const currentPage = Number(page) || 1;
 
     return (
-        <section className="section container max-w-3xl">
+        <section className="section container max-w-4xl">
             <div className="mb-8 text-center">
                 <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gold">
                     Maison Invite
